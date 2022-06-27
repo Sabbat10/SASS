@@ -1,0 +1,35 @@
+$couleurPrincipal: black;
+$couleurSecondaire: tomato;
+
+html{
+    color: $couleurSecondaire;
+    font-size: 1.6em;
+}
+body{
+    margin: 0;
+    color: $couleurPrincipal;
+    height: 100vh - 90;
+}
+header{
+    color: $couleurSecondaire;
+    background: $couleurPrincipal;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+
+    ul{
+        margin: 0;padding: 0;
+        text-decoration: none;
+
+        li{
+            display: inline-block;
+            list-style: none;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+    
+}
+
