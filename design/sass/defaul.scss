@@ -1,35 +1,128 @@
-$couleurPrincipal: black;
-$couleurSecondaire: tomato;
+@use 'header';
 
-html{
-    color: $couleurSecondaire;
-    font-size: 1.6em;
+@import 'variables';
+
+@mixin border-radius ($radiusA...) {
+    -webkit-border-radius: $radiusA;
+    -moz-border-radius: $radiusA;
+    -ms-border-radius: $radiusA;
+    border-radius: $radiusA;
 }
-body{
-    margin: 0;
-    color: $couleurPrincipal;
-    height: 100vh - 90;
-}
-header{
-    color: $couleurSecondaire;
-    background: $couleurPrincipal;
-    text-align: center;
+
+@mixin msg ($couleur: white) {
+    color: $couleur;
+    @include border-radius(50px, 50px);
+    // border-radius: 100px;
     padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 10px;
-
-    ul{
-        margin: 0;padding: 0;
-        text-decoration: none;
-
-        li{
-            display: inline-block;
-            list-style: none;
-            a{
-                text-decoration: none;
-            }
-        }
-    }
-    
+    margin: 5px;
 }
 
+
+@mixin googleFonts($nom) {
+    @import url('https://fonts.googleapis.com/css2?family=' + $nom + '&family=Raleway:wght@200&family=Roboto&display=swap');
+}
+@include googleFonts('Macondo');
+//Creation d'une fonction en Sass
+@function foisQuatre ($nombre) {
+    @return $nombre * 4;
+}
+
+@each $cles, $valeur in $couleurs {
+    .#{$cles}{
+        color: #{$valeur};
+    }
+} 
+
+html {
+    color: darken($couleurSecondaire, 10%) ;
+    font-size: foisQuatre(5px);
+    font-family: 'Macondo', cursive;
+}
+
+body {
+    margin: 0;
+    // background-color: $couleurPrincipal;
+    height: 100vh - 90;
+    @if ($theme == "violet") {
+        color: purple;
+        background-color: white;
+    }
+    @else if ('noire'){
+        color: white;
+        background-color: black;
+    }
+    @else {
+        color: black;
+        background-color: white;
+    }
+}
+
+.erreur {
+    @include msg();
+    background-color: red;
+}
+
+.success {
+    @include msg();
+    background: green;
+}
+
+.notis {
+    @include msg(black);
+    background-color: #f3f3f3;
+}
+
+$nom: "sabbat", "bill", "steve";
+$nombreActuel : 1;
+@each $nom in $nom {
+    .photo-#{$nom}{
+        background-color: red;
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 5px;
+        content: nth($nom, $nombreActuel);
+    }
+    $nombreActuel :$nombreActuel;
+}
+
+// Les conditions
+// @if{
+
+// }@else{
+
+// }
+
+// .msg{
+//     color: white;
+//     border-radius: 10px;
+//     padding: 10px;
+//     margin: 5px;
+// }
+
+//@Boucles @for
+// @for $i from 1 through 6 {
+//     .col-#{i} {
+//         width: 100px*$i;
+//     }  
+// }
+//@Boucle @each
+
+// @each $article in $articles {
+    
+// }
+
+// $idex: 0;
+// @while $idex <= 6 {
+//     .col-#{idex} {
+//            width: 100px*$idex;
+//     }
+//     $idex: $idex + 1;
+// }
+// $font-size: 12;
+// @while font-size <= 18{
+//     .font-size-#{$font-size}{        
+//         font-size: $font-size * 1px;
+//     }
+//     $font-size: $font-size + 2;
+// }

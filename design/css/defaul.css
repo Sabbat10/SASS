@@ -1,1 +1,111 @@
-html{color:tomato;font-size:1.6em}body{margin:0;color:#000;height:10vh}header{color:tomato;background:#000;text-align:center;padding:10px;font-family:Arial,Helvetica,sans-serif;margin-bottom:10px}header ul{margin:0;padding:0;text-decoration:none}header ul li{display:inline-block;list-style:none}header ul li a{text-decoration:none}/*# sourceMappingURL=defaul.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Macondo&family=Raleway:wght@200&family=Roboto&display=swap");
+
+header {
+  color: tomato;
+  background: black;
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+header ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+header ul li {
+  display: inline-block;
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+}
+header ul li a:hover {
+  color: white;
+}
+
+.couleur-Principal {
+  color: #8e44ad;
+}
+
+.couleur-Secondaire {
+  color: red;
+}
+
+.couleur-Terternainer {
+  color: pink;
+}
+
+html {
+  color: #ff3814;
+  font-size: 20px;
+  font-family: "Macondo", cursive;
+}
+
+body {
+  margin: 0;
+  height: 10vh;
+  color: purple;
+  background-color: white;
+}
+
+.erreur {
+  color: white;
+  -webkit-border-radius: 50px, 50px;
+  -moz-border-radius: 50px, 50px;
+  -ms-border-radius: 50px, 50px;
+  border-radius: 50px, 50px;
+  padding: 10px;
+  margin: 5px;
+  background-color: red;
+}
+
+.success {
+  color: white;
+  -webkit-border-radius: 50px, 50px;
+  -moz-border-radius: 50px, 50px;
+  -ms-border-radius: 50px, 50px;
+  border-radius: 50px, 50px;
+  padding: 10px;
+  margin: 5px;
+  background: green;
+}
+
+.notis {
+  color: black;
+  -webkit-border-radius: 50px, 50px;
+  -moz-border-radius: 50px, 50px;
+  -ms-border-radius: 50px, 50px;
+  border-radius: 50px, 50px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #f3f3f3;
+}
+
+.photo-sabbat {
+  background-color: red;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
+  content: "sabbat";
+}
+
+.photo-bill {
+  background-color: red;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
+  content: "bill";
+}
+
+.photo-steve {
+  background-color: red;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
+  content: "steve";
+}
+/*# sourceMappingURL=defaul.css.map */
